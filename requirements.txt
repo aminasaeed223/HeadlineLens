@@ -1,0 +1,8 @@
+streamlit==1.64.0
+pandas==3.0.2
+altair==6.3.0
+spacy==3.8.16
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+truecase==0.0.14
+nltk==3.10.3
+inflect==7.5.0

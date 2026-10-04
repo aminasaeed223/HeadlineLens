@@ -1,0 +1,1067 @@
+{
+  "n_headlines": 2131,
+  "threshold": 3,
+  "source_file": "headlines_dataset.csv",
+  "drop_rate": 0.0216,
+  "drop_rate_local": 0.0169,
+  "drop_reasons": {
+    "scored": 2085,
+    "dropped: too many unmatched words": 46
+  },
+  "n_unmatched_word_types": 780,
+  "top_unmatched": [
+    [
+      "\u2019",
+      266,
+      "local term, name or other"
+    ],
+    [
+      "'s",
+      191,
+      "local term, name or other"
+    ],
+    [
+      "\u2018",
+      103,
+      "local term, name or other"
+    ],
+    [
+      "pm",
+      59,
+      "abbreviation"
+    ],
+    [
+      "govt",
+      42,
+      "abbreviation"
+    ],
+    [
+      "indian",
+      33,
+      "local term, name or other"
+    ],
+    [
+      "punjab",
+      30,
+      "local term, name or other"
+    ],
+    [
+      "imran",
+      25,
+      "local term, name or other"
+    ],
+    [
+      "kashmir",
+      22,
+      "local term, name or other"
+    ],
+    [
+      "australian",
+      20,
+      "local term, name or other"
+    ],
+    [
+      "pakistani",
+      19,
+      "local term, name or other"
+    ],
+    [
+      "kp",
+      19,
+      "abbreviation"
+    ],
+    [
+      "lahore",
+      19,
+      "local term, name or other"
+    ],
+    [
+      "chinese",
+      14,
+      "local term, name or other"
+    ],
+    [
+      "fbr",
+      11,
+      "local term, name or other"
+    ],
+    [
+      "fm",
+      11,
+      "local term, name or other"
+    ],
+    [
+      "pml-n",
+      11,
+      "local term, name or other"
+    ],
+    [
+      "sindh",
+      10,
+      "local term, name or other"
+    ],
+    [
+      "ppp",
+      10,
+      "local term, name or other"
+    ],
+    [
+      "\u2014",
+      10,
+      "local term, name or other"
+    ],
+    [
+      "mqm-p",
+      10,
+      "local term, name or other"
+    ],
+    [
+      "cm",
+      10,
+      "abbreviation"
+    ],
+    [
+      "sc",
+      10,
+      "abbreviation"
+    ],
+    [
+      "fo",
+      9,
+      "local term, name or other"
+    ],
+    [
+      "musharraf",
+      9,
+      "local term, name or other"
+    ],
+    [
+      "pti",
+      9,
+      "local term, name or other"
+    ],
+    [
+      "na",
+      8,
+      "local term, name or other"
+    ],
+    [
+      "iranian",
+      8,
+      "local term, name or other"
+    ],
+    [
+      "us-iran",
+      8,
+      "local term, name or other"
+    ],
+    [
+      "n't",
+      8,
+      "local term, name or other"
+    ],
+    [
+      "saudi",
+      8,
+      "local term, name or other"
+    ],
+    [
+      "rohingya",
+      8,
+      "local term, name or other"
+    ],
+    [
+      "centre",
+      7,
+      "British spelling"
+    ],
+    [
+      "ecp",
+      7,
+      "local term, name or other"
+    ],
+    [
+      "defence",
+      7,
+      "British spelling"
+    ],
+    [
+      "t20",
+      7,
+      "abbreviation"
+    ],
+    [
+      "ho",
+      7,
+      "local term, name or other"
+    ],
+    [
+      "igp",
+      7,
+      "local term, name or other"
+    ],
+    [
+      "coronavirus",
+      7,
+      "local term, name or other"
+    ],
+    [
+      "ihc",
+      6,
+      "local term, name or other"
+    ],
+    [
+      "soleimani",
+      6,
+      "local term, name or other"
+    ],
+    [
+      "u-19",
+      6,
+      "local term, name or other"
+    ],
+    [
+      "fia",
+      6,
+      "local term, name or other"
+    ],
+    [
+      "pia",
+      5,
+      "local term, name or other"
+    ],
+    [
+      "mideast",
+      5,
+      "local term, name or other"
+    ],
+    [
+      "programme",
+      5,
+      "British spelling"
+    ],
+    [
+      "misbah",
+      5,
+      "local term, name or other"
+    ],
+    [
+      "nawaz",
+      5,
+      "local term, name or other"
+    ],
+    [
+      "asia",
+      5,
+      "local term, name or other"
+    ],
+    [
+      "icc",
+      5,
+      "local term, name or other"
+    ],
+    [
+      "pemra",
+      5,
+      "local term, name or other"
+    ],
+    [
+      "lhc",
+      5,
+      "local term, name or other"
+    ],
+    [
+      "iraqi",
+      4,
+      "local term, name or other"
+    ],
+    [
+      "rumours",
+      4,
+      "British spelling"
+    ],
+    [
+      "psx",
+      4,
+      "local term, name or other"
+    ],
+    [
+      "pakistan",
+      4,
+      "local term, name or other"
+    ],
+    [
+      "buzdar",
+      4,
+      "local term, name or other"
+    ],
+    [
+      "ceo",
+      4,
+      "abbreviation"
+    ],
+    [
+      "nadal",
+      4,
+      "local term, name or other"
+    ],
+    [
+      "5g",
+      4,
+      "local term, name or other"
+    ]
+  ],
+  "unmatched_by_kind": {
+    "local term, name or other": 1921,
+    "British spelling": 63,
+    "abbreviation": 161
+  },
+  "share_headlines_with_unmatched": 0.6157,
+  "share_with_pk_entity": 0.3163,
+  "share_pk_entity_missed": 0.3116,
+  "entity_miss_table": [
+    [
+      "pakistan",
+      157,
+      4,
+      0.025
+    ],
+    [
+      "sindh",
+      64,
+      10,
+      0.156
+    ],
+    [
+      "karachi",
+      44,
+      1,
+      0.023
+    ],
+    [
+      "kp",
+      36,
+      19,
+      0.528
+    ],
+    [
+      "senate",
+      34,
+      0,
+      0.0
+    ],
+    [
+      "punjab",
+      32,
+      30,
+      0.938
+    ],
+    [
+      "lahore",
+      31,
+      20,
+      0.645
+    ],
+    [
+      "pti",
+      30,
+      9,
+      0.3
+    ],
+    [
+      "nab",
+      25,
+      0,
+      0.0
+    ],
+    [
+      "balochistan",
+      18,
+      1,
+      0.056
+    ],
+    [
+      "lhc",
+      14,
+      5,
+      0.357
+    ],
+    [
+      "islamabad",
+      12,
+      0,
+      0.0
+    ],
+    [
+      "fbr",
+      11,
+      11,
+      1.0
+    ],
+    [
+      "ppp",
+      11,
+      10,
+      0.909
+    ],
+    [
+      "ihc",
+      11,
+      6,
+      0.545
+    ],
+    [
+      "peshawar",
+      11,
+      4,
+      0.364
+    ],
+    [
+      "pml n",
+      11,
+      2,
+      0.182
+    ],
+    [
+      "mqm p",
+      10,
+      10,
+      1.0
+    ],
+    [
+      "pcb",
+      8,
+      2,
+      0.25
+    ],
+    [
+      "supreme court",
+      8,
+      0,
+      0.0
+    ],
+    [
+      "shc",
+      8,
+      4,
+      0.5
+    ],
+    [
+      "ecp",
+      7,
+      7,
+      1.0
+    ],
+    [
+      "cpec",
+      7,
+      1,
+      0.143
+    ],
+    [
+      "rawalpindi",
+      7,
+      2,
+      0.286
+    ],
+    [
+      "fia",
+      7,
+      6,
+      0.857
+    ],
+    [
+      "ajk",
+      7,
+      3,
+      0.429
+    ],
+    [
+      "misbah",
+      6,
+      5,
+      0.833
+    ],
+    [
+      "pemra",
+      6,
+      5,
+      0.833
+    ],
+    [
+      "pia",
+      5,
+      5,
+      1.0
+    ],
+    [
+      "quetta",
+      5,
+      1,
+      0.2
+    ],
+    [
+      "ispr",
+      5,
+      2,
+      0.4
+    ],
+    [
+      "swat",
+      4,
+      0,
+      0.0
+    ],
+    [
+      "psx",
+      4,
+      4,
+      1.0
+    ],
+    [
+      "phc",
+      4,
+      1,
+      0.25
+    ],
+    [
+      "sukkur",
+      4,
+      0,
+      0.0
+    ],
+    [
+      "hyderabad",
+      4,
+      0,
+      0.0
+    ],
+    [
+      "bilawal",
+      4,
+      1,
+      0.25
+    ],
+    [
+      "fawad chaudhry",
+      4,
+      0,
+      0.0
+    ],
+    [
+      "thar",
+      4,
+      4,
+      1.0
+    ],
+    [
+      "larkana",
+      4,
+      0,
+      0.0
+    ]
+  ],
+  "top_spacy_entities": [
+    [
+      "pakistan",
+      144
+    ],
+    [
+      "iran",
+      87
+    ],
+    [
+      "india",
+      82
+    ],
+    [
+      "govt",
+      42
+    ],
+    [
+      "sindh",
+      39
+    ],
+    [
+      "karachi",
+      38
+    ],
+    [
+      "coronavirus",
+      29
+    ],
+    [
+      "bangladesh",
+      20
+    ],
+    [
+      "iraq",
+      20
+    ],
+    [
+      "australia",
+      19
+    ],
+    [
+      "pti",
+      18
+    ],
+    [
+      "balochistan",
+      16
+    ],
+    [
+      "un",
+      12
+    ],
+    [
+      "meghan",
+      12
+    ],
+    [
+      "taliban",
+      11
+    ],
+    [
+      "england",
+      11
+    ],
+    [
+      "t20",
+      11
+    ],
+    [
+      "islamabad",
+      10
+    ],
+    [
+      "lahore",
+      10
+    ],
+    [
+      "uk",
+      10
+    ],
+    [
+      "harry",
+      10
+    ],
+    [
+      "kp",
+      9
+    ],
+    [
+      "lhc",
+      9
+    ],
+    [
+      "soleimani",
+      8
+    ],
+    [
+      "russia",
+      8
+    ],
+    [
+      "sindh govt",
+      8
+    ],
+    [
+      "fatf",
+      8
+    ],
+    [
+      "supreme court",
+      8
+    ],
+    [
+      "eu",
+      8
+    ],
+    [
+      "pml n",
+      8
+    ],
+    [
+      "south africa",
+      7
+    ],
+    [
+      "libya",
+      7
+    ],
+    [
+      "murad",
+      7
+    ],
+    [
+      "qureshi",
+      7
+    ],
+    [
+      "malaysia",
+      7
+    ],
+    [
+      "hong kong",
+      6
+    ],
+    [
+      "loc",
+      6
+    ],
+    [
+      "cpec",
+      6
+    ],
+    [
+      "rana sanaullah",
+      6
+    ],
+    [
+      "indonesia",
+      6
+    ]
+  ],
+  "length_mean": 9.55,
+  "share_in_validated_range": 0.0727,
+  "length_buckets": [
+    {
+      "len_bucket": "1-6",
+      "n": 266,
+      "scored": 0.992,
+      "mean": 3.522,
+      "sd": 0.599
+    },
+    {
+      "len_bucket": "7-9",
+      "n": 817,
+      "scored": 0.988,
+      "mean": 3.583,
+      "sd": 0.461
+    },
+    {
+      "len_bucket": "10-13",
+      "n": 860,
+      "scored": 0.969,
+      "mean": 3.582,
+      "sd": 0.415
+    },
+    {
+      "len_bucket": "14-16",
+      "n": 155,
+      "scored": 0.961,
+      "mean": 3.425,
+      "sd": 0.392
+    },
+    {
+      "len_bucket": "17+",
+      "n": 33,
+      "scored": 0.97,
+      "mean": 3.144,
+      "sd": 0.411
+    }
+  ],
+  "determinism": {
+    "n_rescored": 300,
+    "n_changed": 6
+  },
+  "local_shift": {
+    "mean": 0.0249,
+    "share_changed": 0.0921,
+    "share_changed_over_0_25": 0.0422,
+    "corr_original_local": 0.9803
+  },
+  "overall_mean": 3.557,
+  "by_section": [
+    {
+      "section": "Pakistan",
+      "n": 963,
+      "drop_rate": 0.032,
+      "mean": 3.543,
+      "mean_local": 3.585
+    },
+    {
+      "section": "Newspaper",
+      "n": 601,
+      "drop_rate": 0.013,
+      "mean": 3.579,
+      "mean_local": 3.593
+    },
+    {
+      "section": "World",
+      "n": 393,
+      "drop_rate": 0.008,
+      "mean": 3.593,
+      "mean_local": 3.593
+    },
+    {
+      "section": "Sport",
+      "n": 43,
+      "drop_rate": 0.0,
+      "mean": 3.635,
+      "mean_local": 3.648
+    },
+    {
+      "section": "Business",
+      "n": 26,
+      "drop_rate": 0.0,
+      "mean": 3.281,
+      "mean_local": 3.328
+    },
+    {
+      "section": "Tech",
+      "n": 16,
+      "drop_rate": 0.0,
+      "mean": 3.58,
+      "mean_local": 3.58
+    },
+    {
+      "section": "Sp Supplements",
+      "n": 15,
+      "drop_rate": 0.0,
+      "mean": 2.984,
+      "mean_local": 3.086
+    },
+    {
+      "section": "Prism",
+      "n": 4,
+      "drop_rate": 0.0,
+      "mean": 2.831,
+      "mean_local": 2.831
+    },
+    {
+      "section": "Coronavirus",
+      "n": 2,
+      "drop_rate": 0.0,
+      "mean": 3.917,
+      "mean_local": 3.917
+    },
+    {
+      "section": "01 Feb, 2020 11:33am",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 4.82,
+      "mean_local": 4.82
+    },
+    {
+      "section": "01 Feb, 2020 12:44pm",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 3.48,
+      "mean_local": 3.48
+    },
+    {
+      "section": "01 Feb, 2020 09:54pm",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 5.0,
+      "mean_local": 5.0
+    },
+    {
+      "section": "01 Feb, 2020 06:25pm",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 3.03,
+      "mean_local": 3.03
+    },
+    {
+      "section": "01 Aug, 2020 05:38am",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 5.0,
+      "mean_local": 5.0
+    },
+    {
+      "section": "01 Feb, 2020 11:04am",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 3.28,
+      "mean_local": 3.28
+    },
+    {
+      "section": "02 Feb, 2020 09:41am",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 4.36,
+      "mean_local": 4.36
+    },
+    {
+      "section": "30 Sep, 2020 02:32pm",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 3.5,
+      "mean_local": 3.5
+    },
+    {
+      "section": "22 Aug, 2020 09:00am",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 3.33,
+      "mean_local": 3.33
+    },
+    {
+      "section": "21 Oct, 2020 03:11pm",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 3.38,
+      "mean_local": 3.38
+    },
+    {
+      "section": "06 Mar, 2020 11:21am",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 5.0,
+      "mean_local": 5.0
+    },
+    {
+      "section": "03 Feb, 2020 10:56am",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 4.47,
+      "mean_local": 4.47
+    },
+    {
+      "section": "07 Feb, 2020 07:25am",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 3.07,
+      "mean_local": 3.07
+    },
+    {
+      "section": "Multimedia",
+      "n": 1,
+      "drop_rate": 0.0,
+      "mean": 3.607,
+      "mean_local": 3.607
+    }
+  ],
+  "by_month": [
+    {
+      "month": "2020-01",
+      "n": 2091,
+      "mean": 3.555,
+      "mean_local": 3.58,
+      "covid_share": 0.029
+    },
+    {
+      "month": "2020-02",
+      "n": 16,
+      "mean": 3.556,
+      "mean_local": 3.574,
+      "covid_share": 0.062
+    },
+    {
+      "month": "2020-03",
+      "n": 10,
+      "mean": 3.395,
+      "mean_local": 3.395,
+      "covid_share": 0.8
+    },
+    {
+      "month": "2020-08",
+      "n": 1,
+      "mean": 3.234,
+      "mean_local": 3.234,
+      "covid_share": 0.0
+    }
+  ],
+  "covid_vs_other": {
+    "covid": {
+      "n": 71,
+      "mean": 3.625,
+      "mean_local": 3.627,
+      "drop_rate": 0.0423
+    },
+    "other": {
+      "n": 2060,
+      "mean": 3.555,
+      "mean_local": 3.58,
+      "drop_rate": 0.0209
+    }
+  },
+  "most_concrete": [
+    [
+      "Mailbox",
+      5.0
+    ],
+    [
+      "Fighting Ebola and Hindutva",
+      5.0
+    ],
+    [
+      "Kiran aur George ka Pakistan",
+      5.0
+    ],
+    [
+      "A Sikh in Lahore",
+      5.0
+    ],
+    [
+      "Pakistan",
+      5.0
+    ],
+    [
+      "Coronavirus",
+      5.0
+    ],
+    [
+      "Magazines",
+      5.0
+    ],
+    [
+      "Sarwat Gilani and Fahad Mirza run into Karan Johar at the airport",
+      4.84
+    ],
+    [
+      "Cook-it-yourself: Oreo brownies",
+      4.82
+    ],
+    [
+      "Chaudhry Nisar and the Lahore throne",
+      4.82
+    ]
+  ],
+  "least_concrete": [
+    [
+      "Triumph of Greed",
+      1.85
+    ],
+    [
+      "A Dysfunctional ECP",
+      1.93
+    ],
+    [
+      "What to expect at the 62nd Grammys",
+      1.94
+    ],
+    [
+      "Australian 'megablaze' brought under control",
+      2.08
+    ],
+    [
+      "'Roger is Roger' \u2014 Djokovic not underestimating ageless great",
+      2.12
+    ],
+    [
+      "Judiciary: Treason now accountable",
+      2.19
+    ],
+    [
+      "National: Cornered but not quite",
+      2.21
+    ],
+    [
+      "Govt can independently challenge Nawaz stay abroad: LHC",
+      2.22
+    ],
+    [
+      "Today, I am proudly Iranian",
+      2.24
+    ],
+    [
+      "The unsung (super) hero",
+      2.25
+    ]
+  ]
+}

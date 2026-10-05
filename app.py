@@ -16,11 +16,11 @@ RESULTS = Path("results")
 INK, ABSTRACT, CONCRETE, NONE, ENTITY = "#1D2433", "#5B6C9A", "#C58B1C", "#A0A7B2", "#8A3B2E"
 
 EXAMPLES = [
-    "Sindh govt extends lockdown till end of month",
-    "PM Imran Khan chairs NCOC meeting on rising coronavirus cases",
     "PDM announces next power show in Multan",
-    "Tehsil hospital in Bahawalnagar receives new ventilators",
+    "Sindh govt extends lockdown till end of month",
     "SBP keeps policy rate unchanged at 7pc",
+    "Tehsil hospital in Bahawalnagar receives new ventilators",
+    "PM Imran Khan chairs NCOC meeting on rising coronavirus cases",
     "Ehsaas cash programme reaches 12 million families",
     "This simple idea could change how you think about happiness",
 ]
@@ -28,12 +28,13 @@ EXAMPLES = [
 st.set_page_config(page_title="HeadlineLens", page_icon="🔎", layout="wide")
 st.markdown(f"""
 <style>
+.block-container {{ padding-top: 3.2rem; }}
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&family=IBM+Plex+Serif:ital,wght@0,500;0,600;1,500&display=swap');
 html, body, [class*="css"], .stMarkdown {{ font-family: 'IBM Plex Sans', system-ui, sans-serif; }}
 h1, h2, h3 {{ font-family: 'IBM Plex Serif', Georgia, serif; color: {INK}; font-weight: 600; }}
-.headline {{ font-family: 'IBM Plex Serif', Georgia, serif; font-size: 1.6rem; line-height: 1.35; color: {INK};
+.headline {{ font-family: 'IBM Plex Serif', Georgia, serif; font-size: 1.35rem; line-height: 1.35; color: {INK};
              border-top: 3px solid {INK}; border-bottom: 1px solid {INK}; padding: .7rem 0; margin: .4rem 0 1rem; }}
-.score {{ font-size: 2.6rem; font-weight: 600; color: {INK}; line-height: 1; }}
+.score {{ font-size: 2.1rem; font-weight: 600; color: {INK}; line-height: 1; }}
 .label {{ color: #5E6672; font-size: .92rem; }}
 .chip {{ display: inline-block; padding: 2px 9px; margin: 3px 4px 3px 0; border-radius: 3px; font-size: .95rem; }}
 .note {{ color: #5E6672; font-size: .92rem; }}
@@ -74,66 +75,72 @@ LOGO = f"""<svg width="58" height="58" viewBox="0 0 64 64" xmlns="http://www.w3.
 </svg>"""
 
 st.markdown(f"""
-<div style="display:flex; align-items:center; gap:14px; margin:.2rem 0 .6rem">
-  {LOGO}
+<div style="display:flex; align-items:center; gap:12px; margin:0 0 .3rem">
+  {LOGO.replace('width="58" height="58"', 'width="44" height="44"')}
   <div>
-    <div style="font-family:'IBM Plex Serif',Georgia,serif; font-size:2.3rem; font-weight:600; color:{INK}; line-height:1.05">
+    <div style="font-family:'IBM Plex Serif',Georgia,serif; font-size:1.8rem; font-weight:600; color:{INK}; line-height:1.05">
       Headline<span style="color:{CONCRETE}">Lens</span></div>
-    <div style="color:#5E6672; font-size:1rem; letter-spacing:.04em; text-transform:uppercase">Measuring headline concreteness</div>
+    <div style="color:#5E6672; font-size:.85rem; letter-spacing:.05em; text-transform:uppercase">Measuring headline concreteness</div>
   </div>
 </div>""", unsafe_allow_html=True)
-st.markdown("Type any news headline to see how **concrete or vague** it is, word by word. HeadlineLens also checks "
-            "how well this scoring works on Pakistani English-language news, and where it needs local fixes.")
 
 tab_try, tab_valid, tab_find, tab_about = st.tabs(
     ["Score a headline", "Does the measure travel?", "Pakistani headlines", "About"])
 
 # ------------------------------------------------------------------ try
 with tab_try:
-    c1, c2 = st.columns([1.3, 1], gap="large")
-    with c1:
-        ex = st.selectbox("Start from an example, or write your own below", EXAMPLES)
-        headline = st.text_input("Headline", value=ex)
-    if headline.strip():
-        a = analyze(headline)
-        c1.markdown(f'<div class="headline">{headline}</div>', unsafe_allow_html=True)
-        with c2:
+    _, mid, _ = st.columns([1, 3, 1])
+    with mid:
+        if "headline" not in st.session_state:
+            st.session_state.headline = EXAMPLES[0]
+        pick = st.pills("Try an example", EXAMPLES[:4], selection_mode="single", label_visibility="collapsed")
+        if pick and pick != st.session_state.get("_last_pick"):
+            st.session_state.headline = pick
+            st.session_state._last_pick = pick
+        headline = st.text_input("Headline", key="headline", placeholder="Type any English news headline",
+                                 label_visibility="collapsed")
+
+        if headline.strip():
+            a = analyze(headline)
+            st.markdown(f'<div class="headline">{headline}</div>', unsafe_allow_html=True)
             k1, k2 = st.columns(2)
-            k1.markdown(f'<div class="label">Original method</div><div class="score">{fmt(a["score"])}</div>'
-                        f'<div class="label">{a["status"]}</div>', unsafe_allow_html=True)
-            k2.markdown(f'<div class="label">With Pakistani entities added</div><div class="score">{fmt(a["score_local"])}</div>'
-                        f'<div class="label">{a["status_local"]}</div>', unsafe_allow_html=True)
-            st.markdown('<div class="note">Scale 1 (abstract) to 5 (concrete). A headline is dropped when more '
-                        'than 3 of its words have no rating.</div>', unsafe_allow_html=True)
+            k1.markdown(f'<div class="label">Original method</div><div class="score">{fmt(a["score"])}</div>',
+                        unsafe_allow_html=True)
+            k2.markdown(f'<div class="label">With Pakistani names added</div><div class="score">{fmt(a["score_local"])}</div>',
+                        unsafe_allow_html=True)
+            if a["status"] != "scored":
+                st.caption(f"Original method: {a['status']}")
 
-        rows = [{"word": w, "value": v, "how": "rated word"} for w, v in a["matched"]]
-        rows += [{"word": e.lower(), "value": 5.0, "how": "entity found by spaCy (scored 5)"} for e in a["entities_spacy"]
-                 if not (len(e.split()) == 1 and sc.get_concreteness(e.lower()) is not None)]
-        rows += [{"word": m, "value": 5.0, "how": "Pakistani entity spaCy missed"} for m in a["gazetteer_missed"]]
-        chips = "".join(chip(f'{r["word"]} {r["value"]:.1f}', CONCRETE if r["value"] >= 3 else ABSTRACT)
-                        for r in rows if r["how"] == "rated word")
-        chips += "".join(chip(f'{e} 5', ENTITY) for e in [r["word"] for r in rows if r["how"].startswith("entity")])
-        chips += "".join(chip(f'{w} ?', NONE, filled=False) for w in a["unmatched"])
-        chips += "".join(chip(f'{m}: missed name', ENTITY, filled=False) for m in a["gazetteer_missed"])
-        st.markdown("**How each word was treated**", unsafe_allow_html=True)
-        st.markdown(chips or '<span class="note">No content words found.</span>', unsafe_allow_html=True)
-        st.markdown(f'<div class="note" style="margin-top:.4rem">'
-                    f'{chip("rated", CONCRETE)} concrete-leaning rating {chip("rated", ABSTRACT)} abstract-leaning rating '
-                    f'{chip("entity", ENTITY)} named entity, counted as 5 {chip("no rating", NONE, False)} not in the '
-                    f'rating list {chip("missed", ENTITY, False)} Pakistani name the entity step did not catch</div>',
-                    unsafe_allow_html=True)
+            rows = [{"word": w, "value": v, "how": "rated word"} for w, v in a["matched"]]
+            rows += [{"word": e.lower(), "value": 5.0, "how": "entity found by spaCy (scored 5)"} for e in a["entities_spacy"]
+                     if not (len(e.split()) == 1 and sc.get_concreteness(e.lower()) is not None)]
+            rows += [{"word": m, "value": 5.0, "how": "Pakistani entity spaCy missed"} for m in a["gazetteer_missed"]]
+            chips = "".join(chip(f'{r["word"]} {r["value"]:.1f}', CONCRETE if r["value"] >= 3 else ABSTRACT)
+                            for r in rows if r["how"] == "rated word")
+            chips += "".join(chip(f'{r["word"]} 5', ENTITY) for r in rows if r["how"].startswith("entity"))
+            chips += "".join(chip(f'{w} ?', NONE, filled=False) for w in a["unmatched"])
+            chips += "".join(chip(f'{m}: missed name', ENTITY, filled=False) for m in a["gazetteer_missed"])
+            st.markdown(f'<div style="margin-top:.8rem">{chips or "<span class=note>No content words found.</span>"}</div>',
+                        unsafe_allow_html=True)
 
-        if rows:
-            plot = pd.DataFrame(rows)
-            base = alt.Chart(plot).encode(
-                x=alt.X("value:Q", scale=alt.Scale(domain=[1, 5]), title="Concreteness rating (1 abstract, 5 concrete)"),
-                y=alt.Y("how:N", title=None, axis=alt.Axis(labelLimit=260)),
-                tooltip=["word", "value", "how"])
-            rated = base.transform_filter(alt.datum.how == "rated word").mark_circle(size=220, opacity=1).encode(
-                color=alt.condition(alt.datum.value >= 3, alt.value(CONCRETE), alt.value(ABSTRACT)))
-            ents = base.transform_filter(alt.datum.how != "rated word").mark_circle(size=220, opacity=1, color=ENTITY)
-            text = base.mark_text(dy=-14, fontSize=12, color=INK).encode(text="word:N")
-            st.altair_chart((rated + ents + text).properties(height=90 + 45 * plot.how.nunique()), width="stretch")
+            with st.expander("How to read this"):
+                st.markdown(f'<div class="note">'
+                            f'{chip("rated", CONCRETE)} concrete-leaning &nbsp; {chip("rated", ABSTRACT)} abstract-leaning &nbsp; '
+                            f'{chip("name", ENTITY)} named entity, counted as 5 &nbsp; {chip("?", NONE, False)} not in the rating list &nbsp; '
+                            f'{chip("missed", ENTITY, False)} Pakistani name not caught<br><br>'
+                            f'Scale 1 (abstract) to 5 (concrete). A headline is dropped when more than 3 of its words have no rating.</div>',
+                            unsafe_allow_html=True)
+                if rows:
+                    plot = pd.DataFrame(rows)
+                    base = alt.Chart(plot).encode(
+                        x=alt.X("value:Q", scale=alt.Scale(domain=[1, 5]), title="Concreteness rating"),
+                        y=alt.Y("how:N", title=None, axis=alt.Axis(labelLimit=240)),
+                        tooltip=["word", "value", "how"])
+                    rated = base.transform_filter(alt.datum.how == "rated word").mark_circle(size=180, opacity=1).encode(
+                        color=alt.condition(alt.datum.value >= 3, alt.value(CONCRETE), alt.value(ABSTRACT)))
+                    ents = base.transform_filter(alt.datum.how != "rated word").mark_circle(size=180, opacity=1, color=ENTITY)
+                    text = base.mark_text(dy=-13, fontSize=11, color=INK).encode(text="word:N")
+                    st.altair_chart((rated + ents + text).properties(height=70 + 40 * plot.how.nunique()), width="stretch")
 
 # ------------------------------------------------------------------ validation
 S, D = load_results()
